@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cau 2</title>
+</head>
+<body>
+<p>nhap cac phan tu cua mang: <input type="text" id="giaTri"></p>
+<p>
+    <button onclick="add()">Them</button>
+</p>
+<button onclick=" del()">delete</button>
+<p id="mangMoi"></p>
+<script>
+    let arr = [];
+
+    function add() {
+        let a = document.getElementById('giaTri').value;
+        arr.push(a);
+        document.getElementById('giaTri').value = '';
+    }
+
+    function del() {
+        let b = +prompt('nhap vao vi tri index muon xoa: ')
+        if (b < arr.length && b > -1) {
+            function tryRemoveFromArray(index) {
+                for (let i = index; i < arr.length; i++) {
+                    arr[index] = arr[index + 1];
+                }
+                arr.length = arr.length - 1
+            }
+            tryRemoveFromArray(b)
+            document.getElementById('mangMoi').innerHTML = arr
+        } else {
+            alert('quá độ dài trong mảng')
+        }
+    }
+
+
+</script>
+</body>
+</html>

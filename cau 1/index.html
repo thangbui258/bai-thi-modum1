@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cau 1</title>
+</head>
+<body>
+<p>nhap cac phan tu cua mang: <input type="text" id="giaTri"></p>
+<p>
+    <button onclick="add()">Them</button>
+</p>
+<p>
+    <button onclick="ketQua()">Ket qua</button>
+</p>
+<p id="ketQua"></p>
+<script>
+    let arr = [];
+
+    function add() {
+        let a = document.getElementById('giaTri').value;
+        arr.push(a);
+        document.getElementById('giaTri').value = '';
+    }
+
+    function ketQua() {
+        let temp = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[j] > arr[i]) {
+                    temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp
+
+                }
+            }
+        }
+        document.getElementById('ketQua').innerHTML = arr[2]
+    }
+
+
+</script>
+</body>
+</html>

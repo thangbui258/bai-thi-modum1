@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cau 4</title>
+</head>
+<body>
+<canvas id="canvas1" width="600px" height="800px" style="background-color: red"></canvas>
+<script>
+    class Rectangle {
+        constructor(x, y, width, height, color) {
+            this._x = x;
+            this._y = y;
+            this._width = width;
+            this._height = height;
+            this._color = color;
+            this.canvas = document.getElementById('canvas1')
+        }
+
+        render() {
+            let ctx = this.canvas.getContext('2d');
+            ctx.fillStyle = this._color;
+            ctx.fillRect(this._x, this._y, this._width, this._height)
+        }
+
+    }
+
+    let hcn = new Rectangle(10,10,200,100,'#000000')
+    hcn.render();
+
+
+
+</script>
+</body>
+</html>
